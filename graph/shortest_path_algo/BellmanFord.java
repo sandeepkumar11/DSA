@@ -55,3 +55,10 @@ public class BellmanFord {
 
     }
 }
+
+
+// 📌 When to Use Bellman-Ford?
+
+// ✅ When the graph contains negative weight edges
+// ✅ When we need to detect negative weight cycles
+// ❌ Not suitable for large graphs (Dijkstra is faster for non-negative edges: O((V+E)log⁡V)O((V+E)logV))
