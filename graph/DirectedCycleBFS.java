@@ -8,8 +8,7 @@ import java.util.Queue;
 
 public class DirectedCycleBFS {
     static boolean checkCycle(List<List<Integer>> adj, int V) {
-        int[] inDegree = new int[V];
-        Arrays.fill(inDegree, 0);
+        
         boolean[] visited = new boolean[V];
 
         Queue<Integer> q = new LinkedList<>();

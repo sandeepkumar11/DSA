@@ -1,4 +1,4 @@
-package graph;
+package graph.shortest_path_algo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,6 +14,9 @@ class Pair {
         this.weight = weight;
     }
 }
+
+//Single-Source Shortest Path(for non-negative weights))
+//O((V+E)logV))
 public class DijkstraAlgo {
     public static int[] Dijkstra(List<List<Pair>> graph,int src,int V){
         int[] distance = new int[V];
@@ -70,7 +73,8 @@ public class DijkstraAlgo {
         graph.get(8).add(new Pair(6,6));
         graph.get(8).add(new Pair(7,7));
 
-        int[] distance = Dijkstra(graph, 0, V);
+        int src = 0;
+        int[] distance = Dijkstra(graph, src, V);
 
         for(int i=0;i<V;i++){
             System.out.println("Distance of node "+i+" from source is "+distance[i]);

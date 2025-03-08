@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+//Kahn's Algorithm
 public class TopologyBFS {
     public static void main(String[] args) {
         int V = 4;
@@ -38,15 +39,22 @@ public class TopologyBFS {
             }
         }
 
+        int visited = 0;
+
         while (!q.isEmpty()) {
             int u = q.poll();
             System.out.print(u + " -> ");
+            visited++;
             for (int x : adj.get(u)) {
                 inDegree[x]--;
-                if (inDegree[x] == 0) { // Assuming there is no cycle in the graph.
+                if (inDegree[x] == 0) { 
                     q.offer(x);
                 }
             }
+        }
+
+        if(visited!=V){
+            System.out.println("There is a cycle in the Graph");
         }
     }
 }
