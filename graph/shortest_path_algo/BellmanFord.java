@@ -9,7 +9,7 @@ public class BellmanFord {
 
     record Pair(int src, int dest, int weight){}
 
-    public void bellmanFord(List<List<Pair>> graph, int V, int src){
+    void bellmanFord(List<List<Pair>> graph, int V, int src){
         int[] dist = new int[V];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[src] = 0;

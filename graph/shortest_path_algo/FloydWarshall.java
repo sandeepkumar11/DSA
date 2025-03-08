@@ -32,9 +32,7 @@ public class FloydWarshall {
         int[][] dist = new int[V][V];
 
         for (int i = 0; i < V; i++) {
-            for (int j = 0; j < V; j++) {
-                dist[i][j] = graph[i][j];
-            }
+            dist[i] = graph[i].clone();
         }
 
         for (int k = 0; k < V; k++) {
